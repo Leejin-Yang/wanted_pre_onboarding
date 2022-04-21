@@ -4,6 +4,7 @@ const Container = styled.div`
   display: flex;
   margin-top: 50px;
   border-bottom: 3px solid #ced4da;
+  position: relative;
 `;
 
 const TabMenu = styled.div`
@@ -19,7 +20,7 @@ const TabMenu = styled.div`
 
 const ActiveBar = styled.div`
   position: absolute;
-  top: 100px;
+  top: 50px;
   width: 180px;
   height: 3px;
   background-color: #ff922b;
