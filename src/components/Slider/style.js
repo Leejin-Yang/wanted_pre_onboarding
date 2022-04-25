@@ -48,6 +48,7 @@ const RangeBar = styled.input`
     width: 18px;
     background: ${COLOR.POINT_ORANGE};
     border: 1.5px solid ${COLOR.BORDER};
+    box-shadow: 0px 1px 2px 1px ${COLOR.BORDER};
     border-radius: 50%;
   }
 `;
