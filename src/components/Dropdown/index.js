@@ -8,24 +8,12 @@ import {
   MenuList,
   NoResultMsg,
 } from './style';
+import { DROPDOWN_DATA } from '../../constants/data';
 
 const Dropdown = () => {
-  const countries = [
-    'All Countries 🌏',
-    'South Korea 🇰🇷',
-    'Argentina 🇦🇷',
-    'Canada 🇨🇦',
-    'France 🇫🇷',
-    'Germany 🇩🇪',
-    'Mexico 🇲🇽',
-    'Netherlands 🇳🇱',
-    'Spain 🇪🇸',
-    'Ukraine 🇺🇦',
-    'USA 🇺🇸',
-  ];
   const [country, setCountry] = useState('All Countries 🌏');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [currentData, setCurrentData] = useState(countries);
+  const [currentData, setCurrentData] = useState(DROPDOWN_DATA);
 
   const selectCountry = (e) => {
     const { country } = e.target.dataset;
@@ -48,7 +36,7 @@ const Dropdown = () => {
   const handleSearch = (e) => {
     const searchWord = e.target.value;
 
-    setCurrentData(filterData(countries, searchWord));
+    setCurrentData(filterData(DROPDOWN_DATA, searchWord));
   };
 
   return (
@@ -69,9 +57,9 @@ const Dropdown = () => {
             ></input>
           </SearchForm>
           <MenuList>
-            {currentData.map((country, index) => (
-              <li key={index} data-country={country} onClick={selectCountry}>
-                {country}
+            {currentData.map((data, index) => (
+              <li key={index} data-country={data} onClick={selectCountry}>
+                {data}
               </li>
             ))}
             {!currentData.length && <NoResultMsg>No Result</NoResultMsg>}

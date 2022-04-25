@@ -8,18 +8,18 @@ import {
   Marker,
   ButtonWrapper,
 } from './style';
+import { SLIDER_DATA } from '../../constants/data';
 
 const Slider = () => {
   const [value, setValue] = useState(1);
-  const percents = [1, 25, 50, 75, 100];
 
   const handleChange = (e) => {
     setValue(e.target.value);
   };
 
   const clickButton = (e) => {
-    const { percent } = e.target.dataset;
-    setValue(percent);
+    const { step } = e.target.dataset;
+    setValue(step);
   };
 
   return (
@@ -37,15 +37,15 @@ const Slider = () => {
           onChange={handleChange}
         ></RangeBar>
         <MarkerWrapper>
-          {percents.map((percent, index) => (
-            <Marker key={index} isColored={value >= percent}></Marker>
+          {SLIDER_DATA.map((data, index) => (
+            <Marker key={index} isColored={value >= data}></Marker>
           ))}
         </MarkerWrapper>
       </SliderWrapper>
       <ButtonWrapper>
-        {percents.map((percent, index) => (
-          <button key={index} data-percent={percent} onClick={clickButton}>
-            {percent}%
+        {SLIDER_DATA.map((data, index) => (
+          <button key={index} data-step={data} onClick={clickButton}>
+            {data}%
           </button>
         ))}
       </ButtonWrapper>

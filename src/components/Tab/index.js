@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { Container, TabMenu, ActiveBar } from './style';
+import { TAB_DATA } from '../../constants/data';
 
 const Tab = () => {
   const [activeTab, setActiveTab] = useState(0);
-  const tabMenus = ['감자', '고구마', '카레라이스'];
   const position = activeTab * 180;
 
   const clickTab = (e) => {
@@ -12,7 +12,7 @@ const Tab = () => {
 
   return (
     <Container>
-      {tabMenus.map((menu, index) => (
+      {TAB_DATA.map((menu, index) => (
         <TabMenu
           key={index}
           id={index}
