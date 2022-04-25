@@ -1,6 +1,20 @@
 # 원티드 프리온보딩 프론트엔드 선발 과제
 
-## 1. Toggle
+[데모 페이지](https://leejin-yang-wanted-pre-onboarding.netlify.app/)
+
+## 기술 스택
+
+- JavaScript(ES6)
+- React
+- Styled-Components
+
+<br>
+
+## 과제 구현 목록
+
+### 1. Toggle
+
+![Toggle](https://user-images.githubusercontent.com/78616893/165091496-ada363d0-853d-422b-89b6-e063555b2fb1.gif)
 
 > 구현
 
@@ -15,7 +29,11 @@
   - 각각의 `span`이 상태에 따라 다른 스타일을 가지는 문제
   - 토글 컨테이너에 `prop`을 넘겨주어 첫번재 요소와 마지막 요소 스타일링으로 구현
 
-## 2. Tab
+<br>
+
+### 2. Tab
+
+![Tab](https://user-images.githubusercontent.com/78616893/165091339-860b7bf9-4807-4a5e-8351-a3d9f84706be.gif)
 
 > 구현
 
@@ -35,7 +53,11 @@
   - 인덱스의 타입 `Number`, id의 타입 `String`
   - id의 타입을 `Number`로 변환해 해결
 
-## 3. Slider
+<br>
+
+### 3. Slider
+
+![Slider](https://user-images.githubusercontent.com/78616893/165091396-dde04f2f-084a-4662-82b3-fc360d2276e7.gif)
 
 > 구현
 
@@ -56,7 +78,11 @@
   - `justify-content: space-between`으로 위치를 설정한 경우 bar의 `value`와 매치가 되지 않았다.
   - `grid` 레이아웃으로 각 컨테이너의 크기를 지정해 시각적으로 `value`와 매치가 될 수 있게 해줬다.
 
-## 4. Input
+<br>
+
+### 4. Input
+
+![Input](https://user-images.githubusercontent.com/78616893/165090771-284738cb-61a2-4008-bf00-7b1143df2874.gif)
 
 > 구현
 
@@ -83,7 +109,11 @@
   - `input`과 연관에서 `input`에 `id` 속성, `label`에 같은 값의 `for` 속성
   - 클릭으로 연관된 `input`에 `focus`
 
-## 5. Dropdown
+<br>
+
+### 5. Dropdown
+
+![Dropdown](https://user-images.githubusercontent.com/78616893/165091128-c4f9088b-d756-42d8-ba8c-6e790884b55c.gif)
 
 > 구현
 
