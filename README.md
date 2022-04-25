@@ -14,7 +14,7 @@
 
 ### 1. Toggle
 
-![Toggle](https://user-images.githubusercontent.com/78616893/165091496-ada363d0-853d-422b-89b6-e063555b2fb1.gif)
+![Toggle](https://user-images.githubusercontent.com/78616893/165096212-362e0db8-acf6-4d3a-ad3d-c476b89541ab.gif)
 
 > 구현
 
@@ -33,7 +33,7 @@
 
 ### 2. Tab
 
-![Tab](https://user-images.githubusercontent.com/78616893/165091339-860b7bf9-4807-4a5e-8351-a3d9f84706be.gif)
+![Tab](https://user-images.githubusercontent.com/78616893/165096315-e2d9798d-1fcf-4480-9f31-cd85fd919fe9.gif)
 
 > 구현
 
@@ -57,7 +57,7 @@
 
 ### 3. Slider
 
-![Slider](https://user-images.githubusercontent.com/78616893/165091396-dde04f2f-084a-4662-82b3-fc360d2276e7.gif)
+![Slider](https://user-images.githubusercontent.com/78616893/165096380-5a0805c0-b622-4411-8844-529a442bad44.gif)
 
 > 구현
 
@@ -82,7 +82,7 @@
 
 ### 4. Input
 
-![Input](https://user-images.githubusercontent.com/78616893/165090771-284738cb-61a2-4008-bf00-7b1143df2874.gif)
+![Input](https://user-images.githubusercontent.com/78616893/165096433-ef0393e1-13b1-45a7-946f-779c11b00401.gif)
 
 > 구현
 
@@ -113,7 +113,7 @@
 
 ### 5. Dropdown
 
-![Dropdown](https://user-images.githubusercontent.com/78616893/165091128-c4f9088b-d756-42d8-ba8c-6e790884b55c.gif)
+![Dropdown](https://user-images.githubusercontent.com/78616893/165096511-63d7ffe1-123a-4306-83d4-27f2a1bb6415.gif)
 
 > 구현
 
