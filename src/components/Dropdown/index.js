@@ -15,6 +15,11 @@ const Dropdown = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [currentData, setCurrentData] = useState(DROPDOWN_DATA);
 
+  const clickSelected = () => {
+    setIsMenuOpen(!isMenuOpen);
+    setCurrentData(DROPDOWN_DATA);
+  };
+
   const selectCountry = (e) => {
     const { country } = e.target.dataset;
     setCountry(country);
@@ -41,7 +46,7 @@ const Dropdown = () => {
 
   return (
     <Container>
-      <SelectedWrapper onClick={() => setIsMenuOpen(!isMenuOpen)}>
+      <SelectedWrapper onClick={clickSelected}>
         <span>{country}</span>
         <button>{isMenuOpen ? '▲' : '▼'}</button>
       </SelectedWrapper>
