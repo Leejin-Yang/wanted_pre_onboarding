@@ -35,6 +35,27 @@
   - 인덱스의 타입 `Number`, id의 타입 `String`
   - id의 타입을 `Number`로 변환해 해결
 
+## 3. Slider
+
+> 구현
+
+- `value` 상태 관리
+  - RangeBar의 `onChange`로 `value` 상태 관리
+- 퍼센트 데이터에서 `map` 메소드를 이용해 range 마커와 버튼 생성
+  - `value`가 퍼센트를 넘어가면 배경색 변경
+  - 버튼 `data` 속성에 퍼센트 값으로 클릭 시 `value` 상태 업데이트
+  - `CSS grid`를 통해 버튼과 마커의 위치 설정
+
+> 문제, 배운 점
+
+- `input type=’range’` 스타일링
+  - `-webkit-appearance: none`
+  - 운영체제 및 브라우저의 기본 테마를 기반으로 요소 표현
+  - 요소 스타일을 재지정하기 위해, 동등한 스타일을 위해 이용한다.
+- 버튼 및 마커의 위치 설정
+  - `justify-content: space-between`으로 위치를 설정한 경우 bar의 `value`와 매치가 되지 않았다.
+  - `grid` 레이아웃으로 각 컨테이너의 크기를 지정해 시각적으로 `value`와 매치가 될 수 있게 해줬다.
+
 ## 4. Input
 
 > 구현
