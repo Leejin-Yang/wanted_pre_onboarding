@@ -55,10 +55,10 @@ const RangeBar = styled.input`
 
 const MarkerWrapper = styled.div`
   display: grid;
-  grid-template-columns: 52px 82px 89px 84px 53px;
+  grid-template-columns: 51px 82px 90px 84px 53px;
   width: 100%;
   position: absolute;
-  top: 40%;
+  top: 36%;
   z-index: -1;
 
   & > div:first-of-type {
@@ -81,7 +81,7 @@ const Marker = styled.div`
 
 const ButtonWrapper = styled.div`
   display: grid;
-  grid-template-columns: 51px 1fr 1fr 1fr 51px;
+  grid-template-columns: 50px 1fr 1fr 1fr 50px;
   width: 100%;
   position: relative;
 
