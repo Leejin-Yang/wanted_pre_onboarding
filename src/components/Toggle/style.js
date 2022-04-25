@@ -3,7 +3,6 @@ import { COLOR } from '../../constants/style';
 
 const Container = styled.div`
   display: flex;
-  margin-top: 50px;
   width: 300px;
   height: 45px;
   border-radius: 45px;

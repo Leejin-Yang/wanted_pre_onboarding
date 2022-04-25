@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { COLOR } from '../../constants/style';
 
 const Container = styled.div`
+  width: 360px;
   margin-top: 50px;
   position: relative;
 `;
@@ -10,7 +11,7 @@ const ValueWrapper = styled.div`
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  width: 360px;
+  width: 100%;
   height: 60px;
   background-color: ${COLOR.BACKGROUND_WHITE};
   border-radius: 3px;
@@ -30,7 +31,7 @@ const ValueWrapper = styled.div`
 
 const SliderWrapper = styled.div`
   margin: 0.8rem 0;
-  width: 360px;
+  width: 100%;
   position: relative;
 `;
 
@@ -80,7 +81,7 @@ const Marker = styled.div`
 
 const ButtonWrapper = styled.div`
   display: grid;
-  grid-template-columns: 50px 1fr 1fr 1fr 50px;
+  grid-template-columns: 51px 1fr 1fr 1fr 51px;
   width: 100%;
   position: relative;
 

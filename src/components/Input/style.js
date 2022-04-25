@@ -3,6 +3,7 @@ import { COLOR } from '../../constants/style';
 
 const Container = styled.div`
   margin-top: 50px;
+  width: 360px;
   position: relative;
 
   & > div:first-of-type {

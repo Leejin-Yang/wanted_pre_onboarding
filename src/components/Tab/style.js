@@ -3,6 +3,7 @@ import { COLOR } from '../../constants/style';
 
 const Container = styled.div`
   display: flex;
+  width: 450px;
   margin-top: 50px;
   border-bottom: 3px solid ${COLOR.BORDER};
   position: relative;
@@ -12,7 +13,7 @@ const TabMenu = styled.a`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 180px;
+  width: 150px;
   height: 50px;
   font-weight: bold;
   cursor: pointer;
@@ -23,7 +24,7 @@ const TabMenu = styled.a`
 const ActiveBar = styled.div`
   position: absolute;
   top: 50px;
-  width: 180px;
+  width: 150px;
   height: 3px;
   background-color: ${COLOR.POINT_ORANGE};
   transform: translateX(${(props) => `${props.position}px`});

@@ -3,13 +3,14 @@ import { COLOR } from '../../constants/style';
 
 const Container = styled.div`
   margin-top: 50px;
+  width: 300px;
   position: relative;
 `;
 
 const SelectedWrapper = styled.div`
   display: flex;
   justify-content: space-between;
-  width: 300px;
+  width: 100%;
   padding: 0.6rem;
   border: 1px solid ${COLOR.BORDER};
   border-radius: 3px;
@@ -23,6 +24,7 @@ const SelectedWrapper = styled.div`
 `;
 
 const MenuWrapper = styled.div`
+  width: 100%;
   height: 360px;
   margin-top: 1rem;
   border: 1px solid ${COLOR.BORDER};

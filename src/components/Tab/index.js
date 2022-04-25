@@ -4,7 +4,7 @@ import { TAB_DATA } from '../../constants/data';
 
 const Tab = () => {
   const [activeTab, setActiveTab] = useState(0);
-  const position = activeTab * 180;
+  const position = activeTab * 150;
 
   const clickTab = (e) => {
     setActiveTab(Number(e.target.id));
