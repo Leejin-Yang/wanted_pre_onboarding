@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import { COLOR } from '../../constants/style';
 
 const Container = styled.div`
-  margin-top: 50px;
   width: 300px;
   position: relative;
 `;

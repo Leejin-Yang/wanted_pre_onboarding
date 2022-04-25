@@ -4,7 +4,6 @@ import { COLOR } from '../../constants/style';
 const Container = styled.div`
   display: flex;
   width: 450px;
-  margin-top: 50px;
   border-bottom: 3px solid ${COLOR.BORDER};
   position: relative;
 `;

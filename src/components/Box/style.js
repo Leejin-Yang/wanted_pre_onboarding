@@ -4,11 +4,12 @@ import { COLOR } from '../../constants/style';
 const Container = styled.div`
   display: grid;
   grid-template-rows: repeat(2, minmax(20px, auto));
+  row-gap: 60px;
   place-items: center;
   width: 600px;
   min-height: 300px;
   border: 2px solid ${COLOR.BORDER};
-  margin-bottom: 60px;
+  margin: 30px 0;
   padding: 2rem;
 
   & > h1 {

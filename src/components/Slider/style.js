@@ -3,7 +3,6 @@ import { COLOR } from '../../constants/style';
 
 const Container = styled.div`
   width: 360px;
-  margin-top: 50px;
   position: relative;
 `;
 
@@ -58,7 +57,7 @@ const MarkerWrapper = styled.div`
   grid-template-columns: 51px 82px 90px 84px 53px;
   width: 100%;
   position: absolute;
-  top: 36%;
+  top: 40%;
   z-index: -1;
 
   & > div:first-of-type {
