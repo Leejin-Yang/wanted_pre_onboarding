@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { COLOR } from '../../constants/style';
 
 const Container = styled.div`
   margin-top: 50px;
@@ -18,26 +19,25 @@ const FormWrapper = styled.div`
     font-size: 0.8rem;
     padding-left: 4px;
     margin-bottom: 4px;
-    color: #868e96;
+    color: ${COLOR.TEXT_SECONDARY};
   }
 
   & > input {
     width: 360px;
     padding: 0.8rem;
-    font-size: 1.1rem;
-    background-color: #f8f9fa;
-    border: 1px solid #ced4da;
+    font-size: 1rem;
+    background-color: ${COLOR.BACKGROUND_SECONDARY};
+    border: 1px solid ${COLOR.BORDER};
     border-radius: 3px;
-    color: #495057;
 
     &::placeholder {
-      color: #ced4da;
+      color: ${COLOR.TEXT_DISABLE};
     }
   }
 `;
 
 const ValidMsg = styled.span`
-  color: #ff6b6b;
+  color: ${COLOR.POINT_RED};
   font-size: 0.8rem;
   margin-top: 4px;
 `;

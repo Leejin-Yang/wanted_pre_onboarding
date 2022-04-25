@@ -1,13 +1,14 @@
 import styled from 'styled-components';
+import { COLOR } from '../../constants/style';
 
 const Container = styled.div`
   display: flex;
   margin-top: 50px;
-  border-bottom: 3px solid #ced4da;
+  border-bottom: 3px solid ${COLOR.BORDER};
   position: relative;
 `;
 
-const TabMenu = styled.div`
+const TabMenu = styled.a`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -15,7 +16,8 @@ const TabMenu = styled.div`
   height: 50px;
   font-weight: bold;
   cursor: pointer;
-  color: ${(props) => (props.isActive ? '#495057' : '#ced4da')};
+  color: ${(props) =>
+    props.isActive ? COLOR.TEXT_PRIMARY : COLOR.TEXT_DISABLE};
 `;
 
 const ActiveBar = styled.div`
@@ -23,7 +25,7 @@ const ActiveBar = styled.div`
   top: 50px;
   width: 180px;
   height: 3px;
-  background-color: #ff922b;
+  background-color: ${COLOR.POINT_ORANGE};
   transform: translateX(${(props) => `${props.position}px`});
   transition: 0.3s ease-out;
 `;

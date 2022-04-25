@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { COLOR } from '../../constants/style';
 
 const Container = styled.div`
   margin-top: 50px;
@@ -10,7 +11,7 @@ const SelectedWrapper = styled.div`
   justify-content: space-between;
   width: 300px;
   padding: 0.6rem;
-  border: 1px solid gray;
+  border: 1px solid ${COLOR.BORDER};
   border-radius: 3px;
   cursor: pointer;
 
@@ -24,7 +25,7 @@ const SelectedWrapper = styled.div`
 const MenuWrapper = styled.div`
   height: 360px;
   margin-top: 1rem;
-  border: 1px solid gray;
+  border: 1px solid ${COLOR.BORDER};
   border-radius: 3px;
   position: relative;
   padding: 3px 0;
@@ -36,7 +37,7 @@ const SearchForm = styled.div`
   alig-items: center;
   height: 15%;
   border: none;
-  border-bottom: 1px solid gray;
+  border-bottom: 1px solid ${COLOR.BORDER};
 
   & > input {
     width: 100%;
@@ -50,7 +51,7 @@ const SearchForm = styled.div`
     }
 
     &::placeholder {
-      color: #ced4da;
+      color: ${COLOR.TEXT_DISABLE};
     }
   }
 `;
@@ -65,7 +66,7 @@ const SearchIcon = styled.div`
 `;
 
 const MenuList = styled.ul`
-  height: 85%;
+  max-height: 85%;
   list-style: none;
   padding: 0.3rem 2rem;
   overflow-y: auto;
@@ -79,6 +80,7 @@ const MenuList = styled.ul`
 const NoResultMsg = styled.span`
   display: block;
   margin-top: 1rem;
+  cursor: default;
 `;
 
 export {

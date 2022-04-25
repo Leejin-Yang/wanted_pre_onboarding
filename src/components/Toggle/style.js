@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { COLOR } from '../../constants/style';
 
 const Container = styled.div`
   display: flex;
@@ -6,15 +7,17 @@ const Container = styled.div`
   width: 300px;
   height: 45px;
   border-radius: 45px;
-  background-color: #e9ecef;
+  background-color: ${COLOR.BACKGROUND_PRIMARY};
   position: relative;
 
   & > span:first-of-type {
-    color: ${(props) => (props.isClicked ? '#adb5bd' : '#495057')};
+    color: ${(props) =>
+      props.isClicked ? COLOR.TEXT_SECONDARY : COLOR.TEXT_PRIMARY};
   }
 
   & > span:last-of-type {
-    color: ${(props) => (props.isClicked ? '#495057' : '#adb5bd')};
+    color: ${(props) =>
+      props.isClicked ? COLOR.TEXT_PRIMARY : COLOR.TEXT_SECONDARY};
   }
 `;
 
@@ -24,7 +27,7 @@ const ToggleBall = styled.div`
   left: 3px;
   width: 147px;
   height: 39px;
-  background-color: #ffffff;
+  background-color: ${COLOR.BACKGROUND_WHITE};
   border-radius: 39px;
   transform: translateX(${(props) => (props.isClicked ? '100%' : '0%')});
   transition: 0.3s;
