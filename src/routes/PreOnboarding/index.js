@@ -1,4 +1,3 @@
-import React from 'react'
 import styles from './PreOnboarding.module.scss'
 import Box from '../../components/Box'
 import Toggle from '../../components/Toggle'

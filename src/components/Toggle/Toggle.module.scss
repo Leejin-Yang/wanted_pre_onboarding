@@ -1,12 +1,12 @@
 @use '/src/styles/constants/colors';
 
 .toggle {
+  position: relative;
   display: flex;
   width: 300px;
   height: 45px;
-  border-radius: 45px;
   background-color: colors.$BACKGROUND_PRIMARY;
-  position: relative;
+  border-radius: 45px;
 
   .toggleBall {
     position: absolute;
@@ -16,8 +16,8 @@
     height: 39px;
     background-color: colors.$BACKGROUND_WHITE;
     border-radius: 39px;
-    transform: translateX(0);
     transition: 0.3s;
+    transform: translateX(0);
   }
 
   .clicked {
@@ -25,15 +25,15 @@
   }
 
   span {
+    z-index: 2;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     width: 150px;
     font-size: 1.1rem;
     font-weight: bold;
+    cursor: pointer;
     background: none;
     border: none;
-    cursor: pointer;
-    z-index: 2;
   }
 }

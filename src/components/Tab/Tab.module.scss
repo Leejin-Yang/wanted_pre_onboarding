@@ -8,13 +8,13 @@
 
   .tabMenu {
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     width: 150px;
     height: 50px;
     font-weight: 600;
-    cursor: pointer;
     color: colors.$TEXT_DISABLE;
+    cursor: pointer;
   }
 
   .tabActive {
@@ -27,7 +27,6 @@
     width: 150px;
     height: 3px;
     background-color: colors.$ORANGE;
-    //transform: translateX($ {(props) => `${props.position}px`});
     transition: 0.2s ease-out;
   }
 }

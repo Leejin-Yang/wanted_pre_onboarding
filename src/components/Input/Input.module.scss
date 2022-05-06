@@ -14,9 +14,9 @@
     flex-direction: column;
 
     label {
-      font-size: 0.8rem;
       padding-left: 4px;
       margin-bottom: 4px;
+      font-size: 0.8rem;
       color: colors.$TEXT_SECONDARY;
     }
 
@@ -35,26 +35,26 @@
 
     .validIcon {
       position: absolute;
-      left: 90%;
       top: 28px;
+      left: 90%;
       font-size: 1.4rem;
       cursor: default;
     }
 
     .invalidMessage {
-      color: colors.$RED;
-      font-size: 0.8rem;
       margin-top: 4px;
+      font-size: 0.8rem;
+      color: colors.$RED;
     }
 
     .viewButton {
       position: absolute;
-      left: 90%;
       top: 28px;
+      left: 90%;
       font-size: 1.4rem;
+      cursor: pointer;
       background: none;
       border: none;
-      cursor: pointer;
     }
   }
 }
