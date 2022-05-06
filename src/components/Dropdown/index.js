@@ -1,78 +1,67 @@
-import React, { useState } from 'react';
-import {
-  Container,
-  MenuWrapper,
-  SelectedWrapper,
-  SearchForm,
-  SearchIcon,
-  MenuList,
-  NoResultMsg,
-} from './style';
-import { DROPDOWN_DATA } from '../../constants/data';
+import { useState } from 'react'
+import styles from './Dropdown.module.scss'
+import { DROPDOWN_DATA } from '../../assets/data'
 
-const Dropdown = () => {
-  const [country, setCountry] = useState('All Countries 🌏');
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [currentData, setCurrentData] = useState(DROPDOWN_DATA);
+function Dropdown() {
+  const [country, setCountry] = useState('All Countries 🌏')
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [currentData, setCurrentData] = useState(DROPDOWN_DATA)
 
   const clickSelected = () => {
-    setIsMenuOpen(!isMenuOpen);
-    setCurrentData(DROPDOWN_DATA);
-  };
+    setIsMenuOpen(!isMenuOpen)
+    setCurrentData(DROPDOWN_DATA)
+  }
 
   const selectCountry = (e) => {
-    const { country } = e.target.dataset;
-    setCountry(country);
-    setIsMenuOpen(false);
-  };
+    const { country } = e.target.dataset
+    setCountry(country)
+    setIsMenuOpen(false)
+  }
 
   const filterData = (data, word) => {
     if (!word) {
-      return data;
+      return data
     }
 
-    const newData = data.filter((country) =>
-      country.toLowerCase().startsWith(word.toLowerCase())
-    );
+    const newData = data.filter((country) => country.toLowerCase().startsWith(word.toLowerCase()))
 
-    return newData;
-  };
+    return newData
+  }
 
   const handleSearch = (e) => {
-    const searchWord = e.target.value;
+    const searchWord = e.target.value
 
-    setCurrentData(filterData(DROPDOWN_DATA, searchWord));
-  };
+    setCurrentData(filterData(DROPDOWN_DATA, searchWord))
+  }
 
   return (
-    <Container>
-      <SelectedWrapper onClick={clickSelected}>
-        <span>{country}</span>
-        <button>{isMenuOpen ? '▲' : '▼'}</button>
-      </SelectedWrapper>
+    <div className={styles.dropdown}>
+      <div className={styles.selected}>
+        <p>{country}</p>
+        <button type='button' onClick={clickSelected}>
+          {isMenuOpen ? '▲' : '▼'}
+        </button>
+      </div>
       {isMenuOpen && (
-        <MenuWrapper>
-          <SearchForm>
-            <SearchIcon>👀</SearchIcon>
-            <input
-              type='text'
-              placeholder='Search Country'
-              autoFocus
-              onChange={handleSearch}
-            ></input>
-          </SearchForm>
-          <MenuList>
+        <div className={styles.dropdownMenu}>
+          <div className={styles.searchForm}>
+            <div className={styles.searchIcon}>👀</div>
+            <input type='text' placeholder='Search Country' onChange={handleSearch} />
+          </div>
+          <ul className={styles.menuList}>
             {currentData.map((data, index) => (
-              <li key={index} data-country={data} onClick={selectCountry}>
-                {data}
+              <li key={`country-${index}`}>
+                <button type='button' data-country={data} onClick={selectCountry}>
+                  {data}
+                </button>
               </li>
             ))}
-            {!currentData.length && <NoResultMsg>No Result</NoResultMsg>}
-          </MenuList>
-        </MenuWrapper>
+            {!currentData.length && <span>No Result</span>}
+          </ul>
+        </div>
       )}
-    </Container>
-  );
-};
+    </div>
+  )
+}
 
-export default Dropdown;
+export default Dropdown

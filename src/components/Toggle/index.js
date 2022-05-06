@@ -1,22 +1,23 @@
-import React, { useState } from 'react';
-import { Container, ToggleBall, ToggleSpan } from './style';
-import { TOGGLE_DATA } from '../../constants/data';
+import { useState } from 'react'
+import styles from './Toggle.module.scss'
+import { TOGGLE_DATA } from '../../assets/data'
+import { cx } from '../../styles'
 
-const Toggle = () => {
-  const [isClicked, setIsClicked] = useState(false);
+function Toggle() {
+  const [isClicked, setIsClicked] = useState(false)
 
   const handleToggle = () => {
-    setIsClicked(!isClicked);
-  };
+    setIsClicked(!isClicked)
+  }
 
   return (
-    <Container isClicked={isClicked} onClick={handleToggle}>
-      <ToggleBall isClicked={isClicked}></ToggleBall>
+    <button type='button' className={styles.toggle} onClick={handleToggle}>
+      <div className={cx(styles.toggleBall, { [styles.clicked]: isClicked })} />
       {TOGGLE_DATA.map((data, index) => (
-        <ToggleSpan key={index}>{data}</ToggleSpan>
+        <span key={`toggle-title-${index}`}>{data}</span>
       ))}
-    </Container>
-  );
-};
+    </button>
+  )
+}
 
-export default Toggle;
+export default Toggle

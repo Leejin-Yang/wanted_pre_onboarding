@@ -1,0 +1,60 @@
+@use '/src/styles/constants/colors';
+
+.input {
+  position: relative;
+  width: 360px;
+
+  div:first-of-type {
+    margin-bottom: 1.2rem;
+  }
+
+  .formWrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    label {
+      font-size: 0.8rem;
+      padding-left: 4px;
+      margin-bottom: 4px;
+      color: colors.$TEXT_SECONDARY;
+    }
+
+    input {
+      width: 360px;
+      padding: 0.8rem;
+      font-size: 1rem;
+      background-color: colors.$BACKGROUND_SECONDARY;
+      border: 1px solid colors.$BORDER;
+      border-radius: 3px;
+
+      &::placeholder {
+        color: colors.$TEXT_DISABLE;
+      }
+    }
+
+    .validIcon {
+      position: absolute;
+      left: 90%;
+      top: 28px;
+      font-size: 1.4rem;
+      cursor: default;
+    }
+
+    .invalidMessage {
+      color: colors.$RED;
+      font-size: 0.8rem;
+      margin-top: 4px;
+    }
+
+    .viewButton {
+      position: absolute;
+      left: 90%;
+      top: 28px;
+      font-size: 1.4rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+  }
+}

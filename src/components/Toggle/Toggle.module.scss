@@ -1,0 +1,39 @@
+@use '/src/styles/constants/colors';
+
+.toggle {
+  display: flex;
+  width: 300px;
+  height: 45px;
+  border-radius: 45px;
+  background-color: colors.$BACKGROUND_PRIMARY;
+  position: relative;
+
+  .toggleBall {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 147px;
+    height: 39px;
+    background-color: colors.$BACKGROUND_WHITE;
+    border-radius: 39px;
+    transform: translateX(0);
+    transition: 0.3s;
+  }
+
+  .clicked {
+    transform: translateX(100%);
+  }
+
+  span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 2;
+  }
+}

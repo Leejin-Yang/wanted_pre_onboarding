@@ -1,0 +1,33 @@
+@use '/src/styles/constants/colors';
+
+.tab {
+  position: relative;
+  display: flex;
+  width: 450px;
+  border-bottom: 3px solid colors.$BORDER;
+
+  .tabMenu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    color: colors.$TEXT_DISABLE;
+  }
+
+  .tabActive {
+    color: colors.$TEXT_PRIMARY;
+  }
+
+  .activeBar {
+    position: absolute;
+    top: 50px;
+    width: 150px;
+    height: 3px;
+    background-color: colors.$ORANGE;
+    //transform: translateX($ {(props) => `${props.position}px`});
+    transition: 0.2s ease-out;
+  }
+}

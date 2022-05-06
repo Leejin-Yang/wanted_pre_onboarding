@@ -1,13 +1,18 @@
-import React from 'react';
-import { Container } from './style';
+import styles from './Box.module.scss'
+import PropTypes from 'prop-types'
 
-const Box = ({ name, children }) => {
+function Box({ name, children }) {
   return (
-    <Container>
+    <div className={styles.box}>
       <h1>{name}</h1>
       {children}
-    </Container>
-  );
-};
+    </div>
+  )
+}
 
-export default Box;
+Box.propTypes = {
+  name: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired,
+}
+
+export default Box

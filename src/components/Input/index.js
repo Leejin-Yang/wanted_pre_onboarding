@@ -1,34 +1,27 @@
-import React, { useState } from 'react';
-import {
-  Container,
-  FormWrapper,
-  ValidIcon,
-  ValidMsg,
-  ViewButton,
-} from './style';
+import { useState } from 'react'
+import styles from './Input.module.scss'
 
-const Input = () => {
-  const [email, setEmail] = useState('');
-  const [emailFocus, setEmailFocus] = useState(false);
-  const [isValidEmail, setIsValidEmail] = useState(false);
-  const [isPwdVisible, setIsPwdVisible] = useState(false);
+function Input() {
+  const [email, setEmail] = useState('')
+  const [emailFocus, setEmailFocus] = useState(false)
+  const [isValidEmail, setIsValidEmail] = useState(false)
+  const [isPwdVisible, setIsPwdVisible] = useState(false)
 
   const checkEmail = (email) => {
-    const regex = new RegExp(
-      /^[a-z0-9]([\w._-])([a-z0-9])+([\w._-])+@([a-z0-9]+\.)+[a-z0-9]{2,8}$/i
-    );
+    const pattern = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
+    const regex = new RegExp(pattern)
 
-    return regex.test(email);
-  };
+    return regex.test(email)
+  }
 
   const setUserEmail = (e) => {
-    setEmail(e.target.value);
-    setIsValidEmail(checkEmail(e.target.value));
-  };
+    setEmail(e.target.value)
+    setIsValidEmail(checkEmail(e.target.value))
+  }
 
   return (
-    <Container>
-      <FormWrapper>
+    <div className={styles.input}>
+      <div className={styles.formWrapper}>
         <label htmlFor='email'>E-mail</label>
         <input
           type='email'
@@ -38,25 +31,21 @@ const Input = () => {
           onChange={setUserEmail}
           onFocus={() => setEmailFocus(true)}
           onBlur={() => setEmailFocus(false)}
-        ></input>
-        <ValidIcon>{isValidEmail ? '✅' : '🤔'}</ValidIcon>
+        />
+        <span className={styles.validIcon}>{isValidEmail ? '✅' : '🤔'}</span>
         {email && !isValidEmail && !emailFocus && (
-          <ValidMsg>❗️Invalid e-mail address❗️</ValidMsg>
+          <span className={styles.invalidMessage}>❗️Invalid e-mail address❗️</span>
         )}
-      </FormWrapper>
-      <FormWrapper>
+      </div>
+      <div className={styles.formWrapper}>
         <label htmlFor='password'>Password</label>
-        <input
-          type={isPwdVisible ? 'text' : 'password'}
-          id='password'
-          placeholder='Password'
-        ></input>
-        <ViewButton onClick={() => setIsPwdVisible(!isPwdVisible)}>
+        <input type={isPwdVisible ? 'text' : 'password'} id='password' placeholder='Password' />
+        <button className={styles.viewButton} type='button' onClick={() => setIsPwdVisible(!isPwdVisible)}>
           {isPwdVisible ? '🙉' : '🙈'}
-        </ViewButton>
-      </FormWrapper>
-    </Container>
-  );
-};
+        </button>
+      </div>
+    </div>
+  )
+}
 
-export default Input;
+export default Input
