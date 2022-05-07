@@ -6,7 +6,6 @@
 
 - JavaScript(ES6)
 - React
-- Styled-Components
 
 <br>
 
@@ -131,3 +130,13 @@
   - 크기를 고정했을 때 리스트가 `MenuWrapper`를 넘어가는 문제
   - `Wrapper`의 자식 요소로 있어 input 제외 높이를 차지한다 생각해 리스트의 스타일을 `height: 100%`로 생각했다.
   - `input`을 삭제하고 보니 `Wrapper` 전체의 높이를 따르고 있어 검색 `input`과 `MenuList`의 크기를 정해주어 해결했다.
+
+## 리팩토링
+
+* eslint, prettier, stylelint 적용
+* styled-components -> CSS Module
+* e.target -> e.currentTarget
+* prevState: setState((prev) => !prev)
+* key값 index -> custom key
+* 이벤트 함수명 handle로 시작
+* 변수명 수정
