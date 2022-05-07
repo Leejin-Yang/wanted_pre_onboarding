@@ -19,20 +19,20 @@ function Dropdown() {
 
   const handleOpenButtonClick = () => {
     setIsMenuOpen((prev) => !prev)
-    setFilteredData(() => DROPDOWN_DATA)
+    setFilteredData(DROPDOWN_DATA)
   }
 
   const handleCountryClick = (e) => {
     const { country } = e.currentTarget.dataset
 
-    setCountry(() => country)
-    setIsMenuOpen(() => false)
+    setCountry(country)
+    setIsMenuOpen(false)
   }
 
   const handleSearch = (e) => {
     const searchWord = e.currentTarget.value
 
-    setFilteredData(() => filterData(DROPDOWN_DATA, searchWord))
+    setFilteredData(filterData(DROPDOWN_DATA, searchWord))
   }
 
   return (

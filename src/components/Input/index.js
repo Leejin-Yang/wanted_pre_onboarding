@@ -18,8 +18,8 @@ function Input() {
   const handleEmailChange = (e) => {
     const email = e.currentTarget.value
 
-    setEmail(() => email)
-    setIsValidEmail(() => checkEmailValidation(email))
+    setEmail(email)
+    setIsValidEmail(checkEmailValidation(email))
   }
 
   const handleEmailFocus = () => {
@@ -29,7 +29,7 @@ function Input() {
   const handlePasswordChange = (e) => {
     const password = e.currentTarget.value
 
-    setPassword(() => password)
+    setPassword(password)
   }
 
   const handleViewButtonClick = () => {

@@ -13,13 +13,13 @@ function Slider() {
   const handleChange = (e) => {
     const percentage = e.currentTarget.value
 
-    setPercentage(() => percentage)
+    setPercentage(percentage)
   }
 
   const handleStepClick = (e) => {
     const { step } = e.currentTarget.dataset
 
-    setPercentage(() => step)
+    setPercentage(step)
   }
 
   return (

@@ -3,9 +3,11 @@ import styles from './Tab.module.scss'
 import { TAB_DATA } from '../../assets/data'
 import { cx } from '../../styles'
 
+const TAB_WIDTH = 150
+
 function Tab() {
   const [activeTab, setActiveTab] = useState(0)
-  const position = activeTab * 150
+  const position = activeTab * TAB_WIDTH
 
   const isActive = (index) => {
     return activeTab === index
