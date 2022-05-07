@@ -20,20 +20,38 @@
     transform: translateX(0);
   }
 
-  .clicked {
-    transform: translateX(100%);
-  }
-
-  span {
+  button {
     z-index: 2;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 150px;
+    width: 50%;
     font-size: 1.1rem;
     font-weight: bold;
     cursor: pointer;
     background: none;
     border: none;
+  }
+
+  button:first-of-type {
+    opacity: 1;
+  }
+
+  button:last-of-type {
+    opacity: 0.5;
+  }
+}
+
+.clicked {
+  & > .toggleBall {
+    transform: translateX(100%);
+  }
+
+  button:first-of-type {
+    opacity: 0.5;
+  }
+
+  button:last-of-type {
+    opacity: 1;
   }
 }

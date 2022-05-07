@@ -6,17 +6,19 @@ import { cx } from '../../styles'
 function Toggle() {
   const [isClicked, setIsClicked] = useState(false)
 
-  const handleToggle = () => {
-    setIsClicked(!isClicked)
+  const handleToggleClick = () => {
+    setIsClicked((prev) => !prev)
   }
 
   return (
-    <button type='button' className={styles.toggle} onClick={handleToggle}>
-      <div className={cx(styles.toggleBall, { [styles.clicked]: isClicked })} />
+    <div className={cx(styles.toggle, { [styles.clicked]: isClicked })}>
+      <div className={styles.toggleBall} />
       {TOGGLE_DATA.map((data, index) => (
-        <span key={`toggle-title-${index}`}>{data}</span>
+        <button type='button' key={`toggle-title-${index}`} onClick={handleToggleClick}>
+          {data}
+        </button>
       ))}
-    </button>
+    </div>
   )
 }
 
