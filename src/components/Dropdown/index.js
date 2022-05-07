@@ -5,58 +5,66 @@ import { DROPDOWN_DATA } from '../../assets/data'
 function Dropdown() {
   const [country, setCountry] = useState('All Countries 🌏')
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const [currentData, setCurrentData] = useState(DROPDOWN_DATA)
-
-  const clickSelected = () => {
-    setIsMenuOpen(!isMenuOpen)
-    setCurrentData(DROPDOWN_DATA)
-  }
-
-  const selectCountry = (e) => {
-    const { country } = e.target.dataset
-    setCountry(country)
-    setIsMenuOpen(false)
-  }
+  const [filteredData, setFilteredData] = useState(DROPDOWN_DATA)
 
   const filterData = (data, word) => {
     if (!word) {
       return data
     }
 
-    const newData = data.filter((country) => country.toLowerCase().startsWith(word.toLowerCase()))
+    const filteredData = data.filter((data) => data.toLowerCase().includes(word.toLowerCase()))
 
-    return newData
+    return filteredData
+  }
+
+  const handleOpenButtonClick = () => {
+    setIsMenuOpen((prev) => !prev)
+    setFilteredData(() => DROPDOWN_DATA)
+  }
+
+  const handleCountryClick = (e) => {
+    const { country } = e.currentTarget.dataset
+
+    setCountry(() => country)
+    setIsMenuOpen(() => false)
   }
 
   const handleSearch = (e) => {
-    const searchWord = e.target.value
+    const searchWord = e.currentTarget.value
 
-    setCurrentData(filterData(DROPDOWN_DATA, searchWord))
+    setFilteredData(() => filterData(DROPDOWN_DATA, searchWord))
   }
 
   return (
     <div className={styles.dropdown}>
       <div className={styles.selected}>
-        <p>{country}</p>
-        <button type='button' onClick={clickSelected}>
+        <span>{country}</span>
+        <button type='button' onClick={handleOpenButtonClick}>
           {isMenuOpen ? '▲' : '▼'}
         </button>
       </div>
       {isMenuOpen && (
         <div className={styles.dropdownMenu}>
           <div className={styles.searchForm}>
-            <div className={styles.searchIcon}>👀</div>
-            <input type='text' placeholder='Search Country' onChange={handleSearch} />
+            <span className={styles.searchIcon}>👀</span>
+            <input
+              type='text'
+              placeholder='Search Country'
+              onChange={handleSearch}
+              autoCapitalize='off'
+              autoCorrect='off'
+              spellCheck='false'
+            />
           </div>
           <ul className={styles.menuList}>
-            {currentData.map((data, index) => (
+            {filteredData.map((country, index) => (
               <li key={`country-${index}`}>
-                <button type='button' data-country={data} onClick={selectCountry}>
-                  {data}
+                <button type='button' data-country={country} onClick={handleCountryClick}>
+                  {country}
                 </button>
               </li>
             ))}
-            {!currentData.length && <span>No Result</span>}
+            {!filteredData.length && <li>No Result 🙁</li>}
           </ul>
         </div>
       )}

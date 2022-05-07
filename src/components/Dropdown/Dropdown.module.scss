@@ -8,13 +8,11 @@
     display: flex;
     justify-content: space-between;
     width: 100%;
-    padding: 0.6rem;
-    cursor: pointer;
+    padding: 0.8rem;
     border: 1px solid colors.$BORDER;
     border-radius: 3px;
 
     button {
-      cursor: pointer;
       background: none;
       border: none;
     }
@@ -38,11 +36,9 @@
       border-bottom: 1px solid colors.$BORDER;
 
       .searchIcon {
-        display: flex;
-        align-items: center;
-        justify-content: center;
         width: 2rem;
         font-size: 1.1rem;
+        text-align: center;
         cursor: default;
       }
 
@@ -68,22 +64,15 @@
       padding: 0.3rem 2rem;
       overflow-y: auto;
       list-style: none;
-      cursor: pointer;
 
       li {
-        padding: 0.3rem 0;
+        padding: 0.5rem 0;
 
         button {
           width: 100%;
           font-size: 1rem;
           text-align: left;
         }
-      }
-
-      span {
-        display: block;
-        margin-top: 1rem;
-        cursor: default;
       }
     }
   }
