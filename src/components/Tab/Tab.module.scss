@@ -28,5 +28,6 @@
     height: 3px;
     background-color: colors.$ORANGE;
     transition: 0.2s ease-out;
+    transform: translateX(var(--position));
   }
 }

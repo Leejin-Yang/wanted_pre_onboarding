@@ -6,11 +6,12 @@ import { cx } from '../../styles'
 function Tab() {
   const [activeTab, setActiveTab] = useState(0)
   const position = activeTab * 150
+
   const isActive = (index) => {
     return activeTab === index
   }
 
-  const clickTab = (e) => {
+  const handleTabClick = (e) => {
     const { id } = e.currentTarget.dataset
 
     setActiveTab(Number(id))
@@ -24,12 +25,12 @@ function Tab() {
           type='button'
           key={`tab-menu-${index}`}
           data-id={index}
-          onClick={clickTab}
+          onClick={handleTabClick}
         >
           {menu}
         </button>
       ))}
-      <div className={styles.activeBar} position={position} />
+      <div className={styles.activeBar} style={{ '--position': `${position}px` }} />
     </div>
   )
 }
