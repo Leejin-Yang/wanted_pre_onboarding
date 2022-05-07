@@ -3,20 +3,37 @@ import styles from './Input.module.scss'
 
 function Input() {
   const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
   const [emailFocus, setEmailFocus] = useState(false)
   const [isValidEmail, setIsValidEmail] = useState(false)
-  const [isPwdVisible, setIsPwdVisible] = useState(false)
+  const [isPasswordVisible, setIsPasswordVisible] = useState(false)
 
-  const checkEmail = (email) => {
+  const checkEmailValidation = (email) => {
     const pattern = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
     const regex = new RegExp(pattern)
 
     return regex.test(email)
   }
 
-  const setUserEmail = (e) => {
-    setEmail(e.target.value)
-    setIsValidEmail(checkEmail(e.target.value))
+  const handleEmailChange = (e) => {
+    const email = e.currentTarget.value
+
+    setEmail(() => email)
+    setIsValidEmail(() => checkEmailValidation(email))
+  }
+
+  const handleEmailFocus = () => {
+    setEmailFocus((prev) => !prev)
+  }
+
+  const handlePasswordChange = (e) => {
+    const password = e.currentTarget.value
+
+    setPassword(() => password)
+  }
+
+  const handleViewButtonClick = () => {
+    setIsPasswordVisible((prev) => !prev)
   }
 
   return (
@@ -24,13 +41,16 @@ function Input() {
       <div className={styles.formWrapper}>
         <label htmlFor='email'>E-mail</label>
         <input
-          type='email'
+          type='text'
           id='email'
           placeholder='E-mail'
           value={email}
-          onChange={setUserEmail}
-          onFocus={() => setEmailFocus(true)}
-          onBlur={() => setEmailFocus(false)}
+          onChange={handleEmailChange}
+          onFocus={handleEmailFocus}
+          onBlur={handleEmailFocus}
+          autoCapitalize='off'
+          autoCorrect='off'
+          spellCheck='false'
         />
         <span className={styles.validIcon}>{isValidEmail ? '✅' : '🤔'}</span>
         {email && !isValidEmail && !emailFocus && (
@@ -39,9 +59,18 @@ function Input() {
       </div>
       <div className={styles.formWrapper}>
         <label htmlFor='password'>Password</label>
-        <input type={isPwdVisible ? 'text' : 'password'} id='password' placeholder='Password' />
-        <button className={styles.viewButton} type='button' onClick={() => setIsPwdVisible(!isPwdVisible)}>
-          {isPwdVisible ? '🙉' : '🙈'}
+        <input
+          type={isPasswordVisible ? 'text' : 'password'}
+          id='password'
+          placeholder='Password'
+          value={password}
+          onChange={handlePasswordChange}
+          autoCapitalize='off'
+          autoCorrect='off'
+          spellCheck='false'
+        />
+        <button className={styles.viewButton} type='button' onClick={handleViewButtonClick}>
+          {isPasswordVisible ? '🙉' : '🙈'}
         </button>
       </div>
     </div>
