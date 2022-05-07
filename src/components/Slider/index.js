@@ -4,40 +4,43 @@ import { SLIDER_DATA } from '../../assets/data'
 import { cx } from '../../styles'
 
 function Slider() {
-  const [value, setValue] = useState(1)
+  const [percentage, setPercentage] = useState(1)
 
   const isColored = (data) => {
-    return value >= data
+    return percentage >= data
   }
 
   const handleChange = (e) => {
-    setValue(e.target.value)
+    const percentage = e.currentTarget.value
+
+    setPercentage(() => percentage)
   }
 
-  const clickButton = (e) => {
-    const { step } = e.target.dataset
+  const handleStepClick = (e) => {
+    const { step } = e.currentTarget.dataset
 
-    setValue(step)
+    setPercentage(() => step)
   }
 
   return (
     <div className={styles.slider}>
-      <div className={styles.valueWrapper}>
-        <span>{value}</span>
+      <div className={styles.percentageWrapper}>
+        <span>{percentage}</span>
         <span>%</span>
       </div>
       <div className={styles.rangeBar}>
-        <input type='range' min='1' max='100' value={value} onChange={handleChange} />
+        <input type='range' min='1' max='100' value={percentage} onChange={handleChange} />
+        <div className={styles.showPercentageBar} aria-hidden='true' style={{ '--percentage': `${percentage}%` }} />
         <div className={styles.markerWrapper}>
-          {SLIDER_DATA.map((data) => (
-            <div className={cx(styles.marker, { [styles.colored]: isColored(data) })} key={`marker-${data}`} />
+          {SLIDER_DATA.map((step) => (
+            <div className={cx(styles.marker, { [styles.colored]: isColored(step) })} key={`marker-${step}`} />
           ))}
         </div>
       </div>
       <div className={styles.stepWrapper}>
-        {SLIDER_DATA.map((data, index) => (
-          <button type='button' key={`step-${index}`} data-step={data} onClick={clickButton}>
-            {data}%
+        {SLIDER_DATA.map((step) => (
+          <button type='button' key={`step-${step}`} data-step={step} onClick={handleStepClick}>
+            {step}%
           </button>
         ))}
       </div>
